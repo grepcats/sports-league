@@ -8,9 +8,10 @@ using SportsLeague.Models;
 namespace SportsLeague.Migrations
 {
     [DbContext(typeof(SportsDbContext))]
-    partial class SportsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180417174533_AddNameToDivisions")]
+    partial class AddNameToDivisions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

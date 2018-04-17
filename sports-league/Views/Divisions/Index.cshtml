@@ -1,0 +1,10 @@
+﻿@model IEnumerable<SportsLeague.Models.Division>
+
+<h2>Divisions</h2>
+</hr>
+
+@foreach (var listDivision in Model)
+{
+    @Html.DisplayFor(modelDivision => listDivision.Name)
+
+}

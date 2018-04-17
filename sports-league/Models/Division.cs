@@ -13,6 +13,7 @@ namespace SportsLeague.Models
     {
        [Key]
        public int DivisionId { get; set; }
+       public string Name { get; set; }
        public string Description { get; set; }
        public string Skill { get; set; }
        public int MaxTeams { get; set; }
