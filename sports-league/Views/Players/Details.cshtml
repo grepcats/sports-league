@@ -1,0 +1,14 @@
+﻿@model SportsLeague.Models.Player
+
+@{
+    ViewData["Title"] = "Player - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Player Details</h2>
+<hr />
+
+<p>@Html.DisplayNameFor(model => model.FirstName) : @Html.DisplayFor(model => model.FirstName)</p>
+<p>@Html.DisplayNameFor(model => model.LastName) : @Html.DisplayFor(model => model.LastName)</p>
+<p>@Html.DisplayNameFor(model => model.Team) : @Html.DisplayFor(model => model.Team.Name)</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.PlayerId }) | @Html.ActionLink("Back to Players", "Index")</p>
