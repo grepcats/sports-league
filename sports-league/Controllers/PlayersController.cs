@@ -32,5 +32,20 @@ namespace SportsLeague.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            var thisPlayer = db.Players.FirstOrDefault(Players => Players.PlayerId == id);
+            ViewBag.TeamId = new SelectList(db.Teams, "TeamId", "Name");
+            return View(thisPlayer);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Player player)
+        {
+            db.Entry(player).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
