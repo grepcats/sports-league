@@ -1,0 +1,16 @@
+﻿@model SportsLeague.Models.Division
+
+@{
+    ViewData["Title"] = "Division - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Division Details</h2>
+<hr />
+
+<p>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</p>
+<p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayNameFor(model => model.Skill) : @Html.DisplayFor(model => model.Skill)</p>
+<p>@Html.DisplayNameFor(model => model.MaxTeams) : @Html.DisplayFor(model => model.MaxTeams)</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.DivisionId }) | @Html.ActionLink("Back to Divisions", "Index")</p>
+
