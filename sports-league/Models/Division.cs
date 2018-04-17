@@ -16,5 +16,6 @@ namespace SportsLeague.Models
        public string Description { get; set; }
        public string Skill { get; set; }
        public int MaxTeams { get; set; }
+       public virtual ICollection<Team> Teams { get; set; }
     }
 }

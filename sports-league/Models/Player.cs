@@ -7,14 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SportsLeague.Models
 {
-    [Table("Teams")]
-    public class Team
+    [Table("Players")]
+    public class Player
     {
         [Key]
+        public int PlayerId { get; set; }
         public int TeamId { get; set; }
-        public int DivisionId { get; set; }
-        public int CaptainId { get; set; }
-        public virtual Division Division { get; set; }
-        public virtual ICollection<Player> Players { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public virtual Team Team { get; set; }
     }
 }
