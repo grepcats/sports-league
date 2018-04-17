@@ -10,19 +10,17 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Name)<br />
+    @Html.EditorFor(model => model.Name)<br />
+    @Html.LabelFor(model => model.Description)<br />
+    @Html.EditorFor(model => model.Description)<br />
+    @Html.LabelFor(model => model.Skill)<br />
+    @Html.EditorFor(model => model.Skill)<br />
 
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)
+    @Html.LabelFor(model => model.MaxTeams)<br />
+    @Html.EditorFor(model => model.MaxTeams)<br />
 
-    @Html.LabelFor(model => model.Skill)
-    @Html.EditorFor(model => model.Skill)
-
-    @Html.LabelFor(model => model.MaxTeams)
-    @Html.EditorFor(model => model.MaxTeams)
-
-    <input type="submit" value="Create" class="btn btn-default"/>
+    <input type="submit" value="Create" class="btn btn-default" />
 
 }
 
