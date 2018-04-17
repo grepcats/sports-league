@@ -1,0 +1,29 @@
+﻿@model SportsLeague.Models.Division
+
+@{
+    ViewData["Title"] = "Division - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a new Division</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Skill)
+    @Html.EditorFor(model => model.Skill)
+
+    @Html.LabelFor(model => model.MaxTeams)
+    @Html.EditorFor(model => model.MaxTeams)
+
+    <input type="submit" value="Create" class="btn btn-default"/>
+
+}
+
+@Html.ActionLink("Back to Divisions", "Index")

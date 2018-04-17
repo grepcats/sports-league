@@ -12,18 +12,20 @@ using SportsLeague.Models;
 
 namespace SportsLeague.Controllers
 {
-    public class DivisionController : Controller
+    public class DivisionsController : Controller
     {
         private SportsDbContext db = new SportsDbContext();
         public IActionResult Index()
         {
             List<Division> model = db.Divisions.ToList();
-            return View();
+            return View(model);
         }
+
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Create (Division division)
         {
