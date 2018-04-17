@@ -22,7 +22,11 @@
            <tr>
                <td> @Html.DisplayFor(modelDivision => listDivision.Name)</td>
            
-               <td>@Html.ActionLink("Edit", "Edit", new { id = listDivision.DivisionId })</td>
+               <td>
+                   @Html.ActionLink("Edit", "Edit", new { id = listDivision.DivisionId }) |
+                   @Html.ActionLink("Details", "Details", new { id = listDivision.DivisionId }) |
+                   @Html.ActionLink("Delete", "Delete", new { id = listDivision.DivisionId })
+               </td>
            </tr>
 
         }
@@ -30,4 +34,4 @@
  
 </table>
 
-@Html.ActionLink("Create new division", "Create")
+@Html.ActionLink("Create new Division", "Create")

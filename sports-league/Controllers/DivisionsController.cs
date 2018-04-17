@@ -47,5 +47,19 @@ namespace SportsLeague.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int id)
+        {
+            var thisDivision = db.Divisions.FirstOrDefault(Divisions => Divisions.DivisionId == id);
+            return View(thisDivision);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisDivision = db.Divisions.FirstOrDefault(Divisions => Divisions.DivisionId == id);
+            db.Divisions.Remove(thisDivision);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
