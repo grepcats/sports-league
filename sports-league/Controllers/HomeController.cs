@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace sports_league.Controllers
+namespace SportsLeague.Controllers
 {
     public class HomeController : Controller
     {
