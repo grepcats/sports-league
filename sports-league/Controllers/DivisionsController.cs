@@ -54,7 +54,7 @@ namespace SportsLeague.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             var thisDivision = db.Divisions.FirstOrDefault(Divisions => Divisions.DivisionId == id);
             return View(thisDivision);
