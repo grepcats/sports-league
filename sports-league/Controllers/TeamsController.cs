@@ -62,6 +62,13 @@ namespace SportsLeague.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int id)
+        {
+            var thisTeam = db.Teams.Include(teams => teams.Division).FirstOrDefault(Teams => Teams.TeamId == id);
+            return View(thisTeam);
+        }
+
     }
 
 
