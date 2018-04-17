@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SportsLeague.Models.Player>
+
+@{
+    ViewData["Title"] = "Player";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Players</h2>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team)
+        </th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    @foreach (var listPlayer in Model)
+
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelPlayer => listPlayer.FirstName)</td>
+            <td>@Html.DisplayFor(modelPlayer => listPlayer.LastName)</td>
+            <td>@Html.DisplayFor(modelPlayer => listPlayer.Team.Name)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listPlayer.PlayerId }) |
+                @Html.ActionLink("Details", "Details", new { id = listPlayer.PlayerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listPlayer.PlayerId })
+            </td>
+        </tr>
+
+    }
+
+
+</table>
+
+@Html.ActionLink("Create new Player", "Create")
