@@ -47,5 +47,20 @@ namespace SportsLeague.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisPlayer = db.Players.FirstOrDefault(Players => Players.PlayerId == id);
+            return View(thisPlayer);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisPlayer = db.Players.FirstOrDefault(Players => Players.PlayerId == id);
+            db.Players.Remove(thisPlayer);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

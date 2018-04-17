@@ -1,0 +1,17 @@
+﻿@model SportsLeague.Models.Player
+
+@{
+    ViewData["Title"] = "Player - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Are you sure you want to kill this player?</h2>
+<hr />
+@Html.DisplayFor(model => model.FirstName)
+ @Html.DisplayFor(model => model.LastName)
+@using (Html.BeginForm())
+{
+    <input class="btn btn-danger" type="submit" value="Delete" />
+}
+
+<p>@Html.ActionLink("Back to Players", "Index")</p>
