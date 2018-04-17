@@ -16,12 +16,18 @@ namespace SportsLeague.Controllers
         private SportsDbContext db = new SportsDbContext();
         public IActionResult Index()
         {
-            return View(db.Teams.Include(teams => teams.Division).ToList());
+            var teamInfo = db.Teams.Include(teams => teams.Division).Include(teams => teams.Players);
+            //foreach (var player in teamInfo)
+            //{
+            //    if (player.id == Team.captainId)
+            //}
+            //return View();
         }
 
         public IActionResult Create()
         {
             ViewBag.DivisionId = new SelectList(db.Divisions, "DivisionId", "Name");
+            ViewBag.CaptainId = new SelectList((from player in db.Players.ToList() select new { PlayerId = player.PlayerId, FullName = player.FirstName + " " + player.LastName }), "PlayerId", "FullName");
             return View();
         }
 

@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Division)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaptainId)
+        </th>
         <th></th>
     </tr>
     @foreach (var listTeam in Model)
@@ -25,6 +28,7 @@
         <tr>
             <td>@Html.DisplayFor(modelTeam => listTeam.Name)</td>
             <td>@Html.DisplayFor(modelTeam => listTeam.Division.Name)</td>
+            @*<td>@Html.DisplayFor(modelTeam => listTeam.CaptainId.FirstName @Html.DisplayFor(modelTeam => listTeam.CaptainId.LastName</td>*@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = listTeam.TeamId }) |
                 @Html.ActionLink("Details", "Details", new { id = listTeam.TeamId }) |
